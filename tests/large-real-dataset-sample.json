@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": "user_0",
+      "name": "User 0",
+      "joinDate": "2021-07-18T15:30:45.123456"
+    },
+    {
+      "id": "user_1",
+      "name": "User 1",
+      "joinDate": "2022-03-05T09:12:33.987654"
+    }
+  ],
+  "posts": [
+    {
+      "id": "post_0",
+      "authorId": "user_42",
+      "content": "This is post number 0",
+      "timestamp": "2023-01-15T18:45:22.345678",
+      "likes": 567
+    },
+    {
+      "id": "post_1",
+      "authorId": "user_789",
+      "content": "This is post number 1",
+      "timestamp": "2023-06-30T11:20:15.234567",
+      "likes": 123
+    }
+  ],
+  "comments": [
+    {
+      "id": "comment_0",
+      "authorId": "user_314",
+      "postId": "post_42",
+      "content": "This is comment number 0",
+      "timestamp": "2023-07-01T14:30:00.123456",
+      "likes": 15
+    },
+    {
+      "id": "comment_1",
+      "authorId": "user_271",
+      "postId": "post_789",
+      "content": "This is comment number 1",
+      "timestamp": "2023-07-02T09:15:30.987654",
+      "likes": 7
+    }
+  ],
+  "relationships": [
+    {
+      "type": "friend",
+      "from": "user_0",
+      "to": "user_42"
+    },
+    {
+      "type": "friend",
+      "from": "user_1",
+      "to": "user_314"
+    }
+  ]
+}

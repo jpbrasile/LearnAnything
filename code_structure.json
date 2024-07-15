@@ -1,0 +1,89 @@
+{
+    "project": "Learn Anything",
+    "description": "AI-powered interactive graph generator from raw data",
+    "main_components": [
+      {
+        "name": "src/main.py",
+        "purpose": "Core logic for graph generation",
+        "key_functions": [
+          "call_deepseek_api", "call_claude_api", "upload_image_to_github",
+          "get_image_from_github", "handle_image_generation", "generate_interactive_graph"
+        ],
+        "classes": ["Agent", "LearnEverythingError"],
+        "dependencies": ["requests", "github", "PIL", "dotenv"]
+      },
+      {
+        "name": "src/cli.py",
+        "purpose": "Command-line interface",
+        "key_functions": ["run_cli", "load_data_from_file", "save_result_to_file"],
+        "dependencies": ["argparse", "main.py"]
+      }
+    ],
+    "api_integrations": [
+      {"name": "DeepSeek", "purpose": "AI text generation"},
+      {"name": "Claude", "purpose": "Multimodal AI for quality checking"},
+      {"name": "GitHub", "purpose": "Image storage and retrieval"}
+    ],
+    "data_flow": [
+      "Raw data input",
+      "Orchestration",
+      "Data analysis",
+      "Graph design",
+      "SVG and JS generation",
+      "Image generation and upload",
+      "Code optimization",
+      "Quality check",
+      "Final output"
+    ],
+    "error_handling": {
+      "custom_exception": "LearnEverythingError",
+      "logging": "Implemented throughout the code"
+    },
+    "testing": {
+      "unit_tests": "tests/test_main.py, tests/test_cli.py",
+      "performance_tests": "tests/test_performance.py",
+      "end_to_end_tests": "tests/test_end_to_end.py",
+      "error_handling_tests": "tests/test_error_handling.py"
+    },
+    "test_end_to_end.py": {
+      "purpose": "Simulate complete workflow and verify integration",
+      "key_tests": [
+        "test_full_graph_generation_process"
+      ],
+      "mocked_components": [
+        "call_deepseek_api", "call_claude_api", "upload_image_to_github", "get_image_from_github"
+      ]
+    },
+    "test_error_handling.py": {
+      "purpose": "Verify error handling in various scenarios",
+      "key_tests": [
+        "test_api_error_handling",
+        "test_image_upload_error",
+        "test_invalid_input_data"
+      ],
+      "tested_scenarios": [
+        "API failures", "Image upload failures", "Invalid input data"
+      ]
+    },
+    "environment_variables": [
+      "GITHUB_TOKEN", "REPO_NAME", "BRANCH_NAME",
+      "DEEPSEEK_API_KEY", "DEEPSEEK_API_URL",
+      "CLAUDE_API_KEY", "CLAUDE_API_URL"
+    ],
+    "key_algorithms": [
+      "Graph analysis and structuring",
+      "SVG and JavaScript code generation",
+      "Image processing and upload",
+      "Performance optimization"
+    ],
+    "potential_bottlenecks": [
+      "API rate limits",
+      "Large dataset processing",
+      "Image generation and upload time"
+    ],
+    "scalability_concerns": [
+      "Handling very large graphs",
+      "Concurrent API calls",
+      "GitHub storage limitations"
+    ]
+  }
